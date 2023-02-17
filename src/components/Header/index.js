@@ -4,7 +4,7 @@ import styles from './Header.module.scss';
 export default function Header ({titulo, descricao, className = '', imagem}) {
   return (
     <header className={`${styles.header} ${className}`}>
-      <div className={'header-texto'}>
+      <div className={styles['header-texto']}>
         <h1>{titulo}</h1>
         <h2>{descricao}</h2>
       </div>

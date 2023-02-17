@@ -18,7 +18,7 @@ export default function Navbar() {
           <a href='/' className={classNames(
             styles.link,
             {
-              [styles.selected]: window.location.path === '/'
+              [styles.selected]: window.location.pathname === '/'
             }
           )}>
             Página inicial
