@@ -1,7 +1,9 @@
 # <p align="center">![Trato Tech](./src/assets/logo.svg)<br></p>
 
 * Instituição: [Alura](https://www.alura.com)
-* Curso: [React: gerenciamento de estados globais com Redux](https://cursos.alura.com.br/course/react-gerenciamento-estados-globais-redux)
+* Curso: 
+  * Branch Aula1 - [React: gerenciamento de estados globais com Redux](https://cursos.alura.com.br/course/react-gerenciamento-estados-globais-redux)
+  * Branch Aula2 - [React: Mutabilidade x Imutabilidade no Redux Toolkit com Immer](https://cursos.alura.com.br/course/react-mutabilidade-imutabilidade-redux-toolkit-immer)
 * Projeto Publicado: https://studies-redux-trato-tech.vercel.app/
 
 ## Descrição do projeto
