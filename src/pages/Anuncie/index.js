@@ -4,14 +4,16 @@ import { cadastrarItem } from 'store/reducers/itens';
 import styles from './Anuncie.module.scss';
 import Button from 'components/Button';
 import Header from 'components/Header';
+import { useParams } from 'react-router-dom';
 
 
 const Anuncie = () => {
   const dispatch = useDispatch();
+  const { nomeCategoria = '' } = useParams();
   const categorias = useSelector(state => state.categorias.map(({ nome, id}) => ({ nome, id })))
   const { register, handleSubmit, formState } = useForm({
     defaultValues: {
-      categoria: ''
+      categoria: nomeCategoria
     }
   });
   const { errors } = formState;
@@ -30,7 +32,7 @@ const Anuncie = () => {
 
       <form className={styles.formulario} onSubmit={handleSubmit(cadastrar)}>
         <input 
-          {...register('nome', { required: 'O campo nome é obrigatório' })} 
+          {...register('titulo', { required: 'O campo nome é obrigatório' })} 
           placeholder='Nome do produto' 
           alt='nome do produto'
           className={errors.name ? styles['input-erro'] : ''}
@@ -46,7 +48,7 @@ const Anuncie = () => {
         {errors.descricao && <span className={styles['mensagem-erro']}> {errors.descricao.message} </span>}
 
         <input 
-          {...register('imagem', { required: 'O campo imagem é obrigatório' })} 
+          {...register('foto', { required: 'O campo imagem é obrigatório' })} 
           placeholder='URL da imagem do produto' 
           alt='URL da imagem do produto'
           className={errors.imagem ? styles['input-erro'] : ''}
@@ -55,6 +57,7 @@ const Anuncie = () => {
 
         <select  
           {...register('categoria', { required: 'O campo categoria é obrigatório' })}
+          disabled={nomeCategoria}
           className={errors.categoria ? styles['input-erro'] : ''}
         >
           <option value='' disabled>Selecione a categoria</option>
@@ -67,7 +70,7 @@ const Anuncie = () => {
         {errors.categoria && <span className={styles['mensagem-erro']}> {errors.categoria.message} </span>}
 
         <input 
-          {...register('preco', { required: 'O campo preço é obrigatório' })} 
+          {...register('preco', { required: 'O campo preço é obrigatório', valueAsNumber: true })} 
           type='number' 
           placeholder='Preço do produto' 
           className={errors.preco ? styles['input-erro'] : ''}

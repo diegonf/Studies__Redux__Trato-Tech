@@ -3,6 +3,7 @@ import styles from './Home.module.scss';
 import Header from 'components/Header';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Button from 'components/Button';
 
 
 export default function Home() {
@@ -16,7 +17,11 @@ export default function Home() {
         descricao='Compre diversos tipos de produtos no melhor site do Brasil!'
         imagem={relogio}
         className={styles.header}
-      />
+      >
+        <Button onClick={() => nav('/anuncie')}>
+          Quero Anunciar!
+        </Button>
+      </Header>
       <div className={styles.categorias}>
         <div className={styles['categorias-title']}>
           <h1>

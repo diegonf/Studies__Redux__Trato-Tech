@@ -1,7 +1,11 @@
 import styles from './TituloSemImagem.module.scss';
 
 
-const TituloSemImagem = ({titulo, descricao}) => {
+const TituloSemImagem = ({
+  titulo, 
+  descricao,
+  children,
+}) => {
 
   return (
     <div className={styles.container}>
@@ -11,6 +15,7 @@ const TituloSemImagem = ({titulo, descricao}) => {
       <h2 className={styles.descricao}>
         {descricao}
       </h2>
+      {children}
     </div>
   );
 };

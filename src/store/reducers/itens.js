@@ -232,14 +232,14 @@ const itensSlice = createSlice({
   name: 'itens',
   initialState,
   reducers: {
-    mudarFavorito: (state, {payLoad}) => {
+    mudarFavorito: (state, {payload}) => {
       state = state.map(item => {
-        if(item.id === payLoad) item.favorito = !item.favorito;
+        if(item.id === payload) item.favorito = !item.favorito;
         return item;
       })
     },
-    cadastrarItem: (state, payLoad) => {
-      state.push({ ...payLoad , id: uuid() });
+    cadastrarItem: (state, { payload }) => {
+      state.push({ ...payload , id: uuid() });
     }
   }
 });
