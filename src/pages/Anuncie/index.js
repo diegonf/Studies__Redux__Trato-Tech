@@ -5,6 +5,7 @@ import styles from './Anuncie.module.scss';
 import Button from 'components/Button';
 import Header from 'components/Header';
 import { useParams } from 'react-router-dom';
+import Input from 'components/Input';
 
 
 const Anuncie = () => {
@@ -31,7 +32,7 @@ const Anuncie = () => {
       />
 
       <form className={styles.formulario} onSubmit={handleSubmit(cadastrar)}>
-        <input 
+        <Input 
           {...register('titulo', { required: 'O campo nome é obrigatório' })} 
           placeholder='Nome do produto' 
           alt='nome do produto'
@@ -39,7 +40,7 @@ const Anuncie = () => {
         />
         {errors.nome && <span className={styles['mensagem-erro']}> {errors.nome.message} </span>}
 
-        <input 
+        <Input 
           {...register('descricao', { required: 'O campo descrição é obrigatório' })} 
           placeholder='Descrição do produto' 
           alt='descrição do produto'
@@ -47,7 +48,7 @@ const Anuncie = () => {
         />
         {errors.descricao && <span className={styles['mensagem-erro']}> {errors.descricao.message} </span>}
 
-        <input 
+        <Input 
           {...register('foto', { required: 'O campo imagem é obrigatório' })} 
           placeholder='URL da imagem do produto' 
           alt='URL da imagem do produto'
@@ -69,7 +70,7 @@ const Anuncie = () => {
         </select>
         {errors.categoria && <span className={styles['mensagem-erro']}> {errors.categoria.message} </span>}
 
-        <input 
+        <Input 
           {...register('preco', { required: 'O campo preço é obrigatório', valueAsNumber: true })} 
           type='number' 
           placeholder='Preço do produto' 
