@@ -6,13 +6,14 @@ import Button from 'components/Button';
 import Header from 'components/Header';
 import { useParams } from 'react-router-dom';
 import Input from 'components/Input';
+import { useEffect } from 'react';
 
 
 const Anuncie = () => {
   const dispatch = useDispatch();
   const { nomeCategoria = '' } = useParams();
   const categorias = useSelector(state => state.categorias.map(({ nome, id}) => ({ nome, id })))
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, reset, submittedData } = useForm({
     defaultValues: {
       categoria: nomeCategoria
     }
@@ -21,7 +22,14 @@ const Anuncie = () => {
   
   const cadastrar = (data) => {
     dispatch(cadastrarItem(data));
+
   }
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset();
+    }
+  }, [formState, submittedData, reset]);
 
 
   return (
