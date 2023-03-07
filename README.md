@@ -5,6 +5,7 @@
   * Branch Curso 1 - [React: gerenciamento de estados globais com Redux](https://cursos.alura.com.br/course/react-gerenciamento-estados-globais-redux)
   * Branch Curso 2 - [React: Mutabilidade x Imutabilidade no Redux Toolkit com Immer](https://cursos.alura.com.br/course/react-mutabilidade-imutabilidade-redux-toolkit-immer)
   * Branch Curso 3 - [React: entendendo Middlewares com Redux Thunk](https://cursos.alura.com.br/course/react-entendendo-middlewares-redux-thunk)
+  * Branch Curso 4 - [React: utilizando a arquitetura Saga com Redux Saga](https://cursos.alura.com.br/course/react-utilizando-arquitetura-saga-redux-saga)
 * Projeto Publicado: https://studies-redux-trato-tech.vercel.app/
 
 ## Descrição do projeto
