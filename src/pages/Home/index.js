@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { buscarCategorias } from 'store/reducers/categorias';
-import { buscarItens } from 'store/reducers/itens';
+import { carregarCategorias } from 'store/reducers/categorias';
 import relogio from 'assets/inicial.png'
 import styles from './Home.module.scss';
 import Header from 'components/Header';
@@ -15,8 +14,7 @@ export default function Home() {
   const categorias = useSelector(state => state.categorias);
 
   useEffect(() => {
-    dispatch(buscarCategorias());
-    dispatch(buscarItens());
+    dispatch(carregarCategorias());
   }, [dispatch]);
 
   return (

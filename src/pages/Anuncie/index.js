@@ -7,6 +7,7 @@ import Header from 'components/Header';
 import { useParams } from 'react-router-dom';
 import Input from 'components/Input';
 import { useEffect } from 'react';
+import { carregarCategorias, carregarUmaCategoria } from 'store/reducers/categorias';
 
 
 const Anuncie = () => {
@@ -24,6 +25,12 @@ const Anuncie = () => {
     dispatch(cadastrarItem(data));
 
   }
+
+  useEffect(() => {
+    dispatch(nomeCategoria 
+      ? carregarUmaCategoria(nomeCategoria) 
+      : carregarCategorias())
+  }, [dispatch, nomeCategoria]);
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {

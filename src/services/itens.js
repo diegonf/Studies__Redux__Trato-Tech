@@ -6,6 +6,11 @@ const itensService = {
     const resposta = await instance.get('/itens');
 
     return resposta.data;
+  },
+  buscarDeCategoria: async (nomeCategoria) => {
+    const resposta = await instance.get(`/itens?categoria=${nomeCategoria}`);
+
+    return resposta.data;
   }
 }
 
