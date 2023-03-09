@@ -1,6 +1,5 @@
-import categoriasService from 'services/categorias';
 import { createStandaloneToast } from '@chakra-ui/toast';
-import { createAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAction, createSlice } from '@reduxjs/toolkit';
 import { resetarCarrinho } from './carrinho';
 import { cadastrarItem } from './itens';
 
@@ -10,10 +9,6 @@ const initialState = [];
 export const carregarCategorias = createAction('categorias/carregarCategorias');
 export const carregarUmaCategoria = createAction('categoria/carregarUmaCategoria');
 
-export const buscarCategorias = createAsyncThunk(
-  'categorias/buscar',
-  categoriasService.buscar
-);
 
 const categoriasSlice = createSlice({
   name: 'categorias',

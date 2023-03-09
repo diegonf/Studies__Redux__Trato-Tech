@@ -1,12 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
-import itensService from 'services/itens';
 
-
-export const buscarItens = createAsyncThunk(
-  'itens/buscar',
-  itensService.buscar
-)
 
 const itensSlice = createSlice({
   name: 'itens',
@@ -33,28 +27,28 @@ const itensSlice = createSlice({
       state.push(...payload);
     }
   },
-  extraReducers: builder => {
-    builder
-      .addCase(buscarItens.fulfilled,
-        (state, { payload }) => {
-          console.log('itens carregados!');
-          if(state.length === 0) return payload;
-          return state;
-        }
-      )
-      .addCase(
-        buscarItens.pending,
-        (state, { payload }) => {
-          console.log('carregando itens')
-        }
-      )
-      .addCase(
-        buscarItens.rejected,
-        (state, { payload }) => {
-          (console.log('busca de itens rejeitada'))
-        }
-      )
-  }
+  // extraReducers: builder => {
+  //   builder
+  //     .addCase(buscarItens.fulfilled,
+  //       (state, { payload }) => {
+  //         console.log('itens carregados!');
+  //         if(state.length === 0) return payload;
+  //         return state;
+  //       }
+  //     )
+  //     .addCase(
+  //       buscarItens.pending,
+  //       (state, { payload }) => {
+  //         console.log('carregando itens')
+  //       }
+  //     )
+  //     .addCase(
+  //       buscarItens.rejected,
+  //       (state, { payload }) => {
+  //         (console.log('busca de itens rejeitada'))
+  //       }
+  //     )
+  // }
 });
 
 export const { adicionarItens, mudarFavorito, cadastrarItem, mudarItem, deletarItem } = itensSlice.actions;
