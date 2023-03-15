@@ -22,6 +22,8 @@ Projeto de loja de produtos online utilizando React e Redux para gerenciamento d
 * Opção de adicionar/ remover item ao carrinho
 * Página carrinho com os itens adicionados e subtotal de todos os itens
 * Opção de alterar quantidade dos itens na página carrinho
+* Opção de finalizar compra na página carrinho, que encaminha para a página pagamento
+* Página pagamento com opção de escolher cartão, vendo a taxa aplicada e com opção de finalizar compra
 
 ## Ferramentas utilizadas
 * React.js
