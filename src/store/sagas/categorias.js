@@ -26,7 +26,6 @@ function* observarCategorias() {  // worker
     });
     
   } catch (error) {
-    console.log('erro');
     toast({
       title: 'Erro!',
       description: 'Erro na busca de categorias',

@@ -1,6 +1,5 @@
 import { createStandaloneToast } from '@chakra-ui/toast';
 import { createAction, createSlice } from '@reduxjs/toolkit';
-import { resetarCarrinho } from './carrinho';
 import { cadastrarItem } from './itens';
 
 const { toast } = createStandaloneToast();
@@ -23,18 +22,6 @@ const categoriasSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(
-        resetarCarrinho.type,
-        () => {
-          toast({
-            title: 'Sucesso!',
-            description: 'Compra completada com sucesso!',
-            status: 'success',
-            duration: 2000,
-            isClosable: true
-          })
-        }
-      )
       .addCase(
         cadastrarItem.type,
         () => {
